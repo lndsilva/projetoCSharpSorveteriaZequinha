@@ -45,6 +45,7 @@
             this.pcbSplash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbSplash.TabIndex = 0;
             this.pcbSplash.TabStop = false;
+            this.pcbSplash.Click += new System.EventHandler(this.pcbSplash_Click);
             // 
             // lblNumero
             // 

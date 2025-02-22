@@ -16,5 +16,12 @@ namespace SorveteriaZequinha
         {
             InitializeComponent();
         }
+
+        private void pcbSplash_Click(object sender, EventArgs e)
+        {
+            frmLogin abrir = new frmLogin();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }
