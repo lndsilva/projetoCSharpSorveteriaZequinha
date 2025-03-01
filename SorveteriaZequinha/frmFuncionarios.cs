@@ -16,5 +16,10 @@ namespace SorveteriaZequinha
         {
             InitializeComponent();
         }
+
+        private void frmFuncionarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
