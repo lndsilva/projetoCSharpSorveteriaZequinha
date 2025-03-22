@@ -1147,6 +1147,9 @@
         BYL+85//B3iK5PPlWJ+qAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="tmrSplash.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAf4AAAAEAIAAoBgEAFgAAACgAAAB/AAAAAAEAAAEAIAAAAAAAAP4AACMuAAAjLgAAAAAAAAAA
