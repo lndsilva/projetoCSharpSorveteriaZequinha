@@ -23,3 +23,4 @@ C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZe
 C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\SorveteriaZequinha\obj\Debug\SorveteriaZequinha.frmMenuPrincipal.resources
 C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\SorveteriaZequinha\obj\Debug\SorveteriaZequinha.frmFuncionarios.resources
 C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\SorveteriaZequinha\obj\Debug\SorveteriaZequinha.frmPesquisarFuncionarios.resources
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\SorveteriaZequinha\obj\Debug\SorveteriaZequinha.frmSobreNos.resources
