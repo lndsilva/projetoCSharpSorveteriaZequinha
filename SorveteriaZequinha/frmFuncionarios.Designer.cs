@@ -67,6 +67,8 @@
             this.lblUF = new System.Windows.Forms.Label();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.lblLogradouro = new System.Windows.Forms.Label();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.lblBairro = new System.Windows.Forms.Label();
             this.gpbDadosPessoais.SuspendLayout();
             this.pnlCRUD.SuspendLayout();
             this.gpbEndereco.SuspendLayout();
@@ -334,6 +336,8 @@
             // 
             // gpbEndereco
             // 
+            this.gpbEndereco.Controls.Add(this.txtBairro);
+            this.gpbEndereco.Controls.Add(this.lblBairro);
             this.gpbEndereco.Controls.Add(this.txtComplemento);
             this.gpbEndereco.Controls.Add(this.txtNumero);
             this.gpbEndereco.Controls.Add(this.lblNumero);
@@ -447,8 +451,9 @@
             this.mskCEP.Location = new System.Drawing.Point(52, 29);
             this.mskCEP.Mask = "99999-999";
             this.mskCEP.Name = "mskCEP";
-            this.mskCEP.Size = new System.Drawing.Size(110, 26);
+            this.mskCEP.Size = new System.Drawing.Size(88, 26);
             this.mskCEP.TabIndex = 9;
+            this.mskCEP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskCEP_KeyDown);
             // 
             // lblCEP
             // 
@@ -528,6 +533,23 @@
             this.lblLogradouro.TabIndex = 2;
             this.lblLogradouro.Text = "Logradouro";
             // 
+            // txtBairro
+            // 
+            this.txtBairro.Location = new System.Drawing.Point(506, 123);
+            this.txtBairro.MaxLength = 50;
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(246, 26);
+            this.txtBairro.TabIndex = 22;
+            // 
+            // lblBairro
+            // 
+            this.lblBairro.AutoSize = true;
+            this.lblBairro.Location = new System.Drawing.Point(449, 126);
+            this.lblBairro.Name = "lblBairro";
+            this.lblBairro.Size = new System.Drawing.Size(51, 20);
+            this.lblBairro.TabIndex = 21;
+            this.lblBairro.Text = "Bairro";
+            // 
             // frmFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -592,5 +614,7 @@
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.TextBox txtBairro;
+        private System.Windows.Forms.Label lblBairro;
     }
 }

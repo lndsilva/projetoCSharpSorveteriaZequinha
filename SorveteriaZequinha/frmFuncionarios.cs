@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MosaicoSolutions.ViaCep;
 
 namespace SorveteriaZequinha
 {
@@ -66,6 +67,7 @@ namespace SorveteriaZequinha
             cbbFuncao.Enabled = false;
             cbbUF.Enabled = false;
             dtpDataNascimento.Enabled = false;
+            txtBairro.Enabled = false;
 
             btnCadastrar.Enabled = false;
             btnExcluir.Enabled = false;
@@ -90,6 +92,7 @@ namespace SorveteriaZequinha
             cbbFuncao.Enabled = true;
             cbbUF.Enabled = true;
             dtpDataNascimento.Enabled = true;
+            txtBairro.Enabled = true;   
 
             btnCadastrar.Enabled = true;
             btnExcluir.Enabled = false;
@@ -99,6 +102,20 @@ namespace SorveteriaZequinha
             btnNovo.Enabled = false;
             txtNome.Focus();
 
+        }
+
+        //criando o método busca cep
+        public void buscaCEP(string cep)
+        {
+            var viaCEPService = ViaCepService.Default();
+            var endereco = viaCEPService.ObterEndereco(cep);
+
+            txtLogradouro.Text = endereco.Logradouro;
+            txtCidade.Text = endereco.Localidade;
+            txtBairro.Text = endereco.Bairro;
+            cbbEstado.Text = endereco.UF;
+            cbbUF.Text = endereco.UF;
+            txtComplemento.Text = endereco.Complemento;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -119,7 +136,8 @@ namespace SorveteriaZequinha
                 || txtCidade.Text.Equals("")
                 || cbbEstado.Text.Equals("")
                 || cbbUF.Text.Equals("")
-                || txtComplemento.Text.Equals(""))
+                || txtComplemento.Text.Equals("")
+                || txtBairro.Text.Equals(""))
             {
                 MessageBox.Show("Favor inserir valores.");
             }
@@ -127,7 +145,17 @@ namespace SorveteriaZequinha
             {
                 MessageBox.Show("Cadastrado com sucesso!!!");
                 desabilitarCampos();
-                
+
+            }
+        }
+
+        private void mskCEP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //executando o método busca cep
+                buscaCEP(mskCEP.Text);
+                txtNumero.Focus();
             }
         }
     }
