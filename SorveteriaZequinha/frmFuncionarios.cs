@@ -27,7 +27,14 @@ namespace SorveteriaZequinha
         {
             InitializeComponent();
             //executando o método desabilitar campos
+           desabilitarCampos();
+        }
+        public frmFuncionarios(string nome)
+        {
+            InitializeComponent();
+            //executando o método desabilitar campos
             desabilitarCampos();
+            txtNome.Text = nome;
         }
 
         private void frmFuncionarios_Load(object sender, EventArgs e)
@@ -42,6 +49,8 @@ namespace SorveteriaZequinha
             frmMenuPrincipal abrir = new frmMenuPrincipal();
             abrir.Show();
             this.Hide();
+
+            
 
         }
 
