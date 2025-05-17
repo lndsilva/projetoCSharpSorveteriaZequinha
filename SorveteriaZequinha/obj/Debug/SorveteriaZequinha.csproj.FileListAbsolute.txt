@@ -61,3 +61,4 @@ C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZe
 C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\SorveteriaZequinha\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\SorveteriaZequinha\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\SorveteriaZequinha\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\SorveteriaZequinha\obj\Debug\SorveteriaZequinha.exe.config
