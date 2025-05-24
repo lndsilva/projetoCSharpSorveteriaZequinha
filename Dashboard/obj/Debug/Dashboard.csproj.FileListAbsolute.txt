@@ -1,0 +1,11 @@
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\Dashboard\bin\Debug\Dashboard.exe.config
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\Dashboard\bin\Debug\Dashboard.exe
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\Dashboard\bin\Debug\Dashboard.pdb
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\Dashboard\obj\Debug\Dashboard.csproj.AssemblyReference.cache
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\Dashboard\obj\Debug\Dashboard.Properties.Resources.resources
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\Dashboard\obj\Debug\Dashboard.csproj.GenerateResource.cache
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\Dashboard\obj\Debug\Dashboard.csproj.CoreCompileInputs.cache
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\Dashboard\obj\Debug\Dashboard.exe
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\Dashboard\obj\Debug\Dashboard.pdb
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\Dashboard\obj\Debug\Dashboard.exe.config
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2022\projetoCSharpSorveteriaZequinha\Dashboard\obj\Debug\Dashboard.frmPainelControle.resources
