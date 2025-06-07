@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using MosaicoSolutions.ViaCep;
+//importando biblioteca Myqsl para conectar banco de dados
+using MySql.Data.MySqlClient;
 
 namespace SorveteriaZequinha
 {
@@ -27,7 +29,7 @@ namespace SorveteriaZequinha
         {
             InitializeComponent();
             //executando o método desabilitar campos
-           desabilitarCampos();
+            desabilitarCampos();
         }
         public frmFuncionarios(string nome)
         {
@@ -50,7 +52,7 @@ namespace SorveteriaZequinha
             abrir.Show();
             this.Hide();
 
-            
+
 
         }
 
@@ -101,7 +103,7 @@ namespace SorveteriaZequinha
             cbbFuncao.Enabled = true;
             cbbUF.Enabled = true;
             dtpDataNascimento.Enabled = true;
-            txtBairro.Enabled = true;   
+            txtBairro.Enabled = true;
 
             btnCadastrar.Enabled = true;
             btnExcluir.Enabled = false;
@@ -152,12 +154,57 @@ namespace SorveteriaZequinha
             }
             else
             {
-                MessageBox.Show("Cadastrado com sucesso!!!");
-                desabilitarCampos();
+
+                int resp = cadastrarFuncionarios(txtNome.Text, txtEmail.Text, mskCPF.Text, cbbFuncao.Text,
+                    mskTelefone.Text, mskCEP.Text, txtLogradouro.Text, txtNumero.Text,
+                    txtCidade.Text, cbbEstado.Text, cbbUF.Text, txtComplemento.Text, txtBairro.Text);
+
+                if (resp == 1)
+                {
+                    MessageBox.Show("Cadastrado com sucesso!!!");
+                    desabilitarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao cadastrar!!!");
+                }
+
 
             }
         }
+        //cadastrar funcionarios
+        public int cadastrarFuncionarios(string nome, string email, string cpf,
+            string funcao, string telcel, string cep, string logradouro, string numero,
+            string cidade, string estado, string uf, string complemento, string bairro
+            )
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "insert into tbfuncionarios(nome,email,cpf,funcao,telCel,cep,logradouro,numero,cidade,estado,uf,complemento,bairro)values(@nome,@email,@cpf,@funcao,@telCel,@cep,@logradouro,@numero,@cidade,@estado,@uf,@complemento,@bairro);";
+            comm.CommandType = CommandType.Text;
 
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = nome;
+            comm.Parameters.Add("@email", MySqlDbType.VarChar, 100).Value = email;
+            comm.Parameters.Add("@cpf", MySqlDbType.VarChar, 14).Value = cpf;
+            comm.Parameters.Add("@funcao", MySqlDbType.VarChar, 100).Value = funcao;
+            comm.Parameters.Add("@telCel", MySqlDbType.VarChar, 10).Value = telcel;
+            comm.Parameters.Add("@cep", MySqlDbType.VarChar, 9).Value = cep;
+            comm.Parameters.Add("@logradouro", MySqlDbType.VarChar, 100).Value = logradouro;
+            comm.Parameters.Add("@numero", MySqlDbType.VarChar, 10).Value = numero;
+            comm.Parameters.Add("@cidade", MySqlDbType.VarChar, 100).Value = cidade;
+            comm.Parameters.Add("@estado", MySqlDbType.VarChar, 100).Value = estado;
+            comm.Parameters.Add("@uf", MySqlDbType.VarChar, 2).Value = uf;
+            comm.Parameters.Add("@complemento", MySqlDbType.VarChar, 30).Value = complemento;
+            comm.Parameters.Add("@bairro", MySqlDbType.VarChar, 100).Value = bairro;
+
+            comm.Connection = Conexao.obterConexao();
+
+            int resp = comm.ExecuteNonQuery();
+
+            Conexao.fecharConexao();
+
+            return resp;
+        }
         private void mskCEP_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

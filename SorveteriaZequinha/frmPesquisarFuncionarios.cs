@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace SorveteriaZequinha
 {
@@ -29,7 +30,7 @@ namespace SorveteriaZequinha
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            ltbPesquisar.Items.Add(txtDescricao.Text);
+            pesquisarFuncionarioNome(txtDescricao.Text);
         }
 
         private void frmPesquisarFuncionarios_Load(object sender, EventArgs e)
@@ -46,5 +47,27 @@ namespace SorveteriaZequinha
             abrir.Show();
             this.Hide();
         }
+        //buscar funcionario pelo nome
+        public void pesquisarFuncionarioNome(string nome)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select * from tbFuncionarios where nome like '%" + nome + "%'";
+            comm.CommandType = CommandType.Text;
+
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+            
+            while (DR.Read())
+            {
+                ltbPesquisar.Items.Add(DR.GetString(1));
+            }
+
+            Conexao.fecharConexao();
+
+
+        }
+
     }
 }
